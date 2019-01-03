@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <link rel="stylesheet" href="path/to/swiper.min.css">
+    
+    <style>
+    
+#div12{
+	max-width:1050px;
+	width:90%;
+	display:flex;
+	margin:0 auto;
+	border:pink dotted 2px;
+}
+/*#div12-left, #div12-right{*/
+/*	display:inline-block;*/
+/*	margin:auto;*/
+/*}*/
+/*#div12-left{*/
+/*	float:left;*/
+/*}*/
+/*#div12-right{*/
+/*	float:right;*/
+/*}*/
+#div12-left.border1{
+	border:#ffdb8f solid 1px;
+	max-width:385px;
+	height: auto;
+	padding:15px;
+}
+#div12-left .border2{
+	border:#523d2a 4px solid;
+	max-width: 320px;
+	height: 95%;
+	padding:15px;
+	/*display: flex;*/
+	/*flex-wrap: wrap;*/
+}
+.div12-left-img{
+	width:100%;
+	border-radius:7px;
+}
+#div12 p{
+	text-align: left;
+	font-size: 1rem;
+}
+#infoSum{
+	border:1px solid #ffdb8f;
+	text-align: center;
+	padding:10px;
+}
+#div12-right.border1{
+	border:#ffdb8f solid 1px;
+	max-width:570px;
+	padding:15px;
+}
+#div12-right .border2{
+	border:#523d2a 4px solid;
+	max-width: 540px;
+	height: 95%;
+	padding:15px;
+	position:relative;
+}
+
+.slide-outter{
+	max-width:540px;
+	width:100%;
+	height:100%;
+	position: relative;
+}
+.slide-inner{
+	width:100%;
+  	height: 95%;
+  	display:flex;
+  	position: relative;
+}
+.slide-inner img{
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transition:1s ease-in-out;
+}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+    }
+
+  </style>
+  </head>
+  <body>
+    <div id="div12">
+				<div id="div12-left" class="border1">
+					<div class="border2">
+						<h3>最新消息</h3><br>
+						<a href="#">
+							<img src="img/火焰.jpg" alt="火焰.jpg" style="border-radius: 5%;width:90%;">
+							<img src="https://alittlebityummy.com/wp-content/uploads/2018/01/Low-FODMAP-Sushi.jpg" class="div12-left-img"></img>
+							<div class="date">2018-5-28</div>
+							<p>好吃好吃 可口可口</p><br>
+						</a>
+						<a href="#">
+							<img src="img/松板.jpg" alt="松板.jpg" style="border-radius: 5%;width:90%">
+							<img src="https://alittlebityummy.com/wp-content/uploads/2018/01/Low-FODMAP-Sushi.jpg" class="div12-left-img"></img>
+							<div class="date">2018-5-28</div>
+							<p>福氣雙拼 滿足滿足</p><br>
+						</a>
+						<div id="infoSum">
+							<a href="#">訊息總覽<i class="far fa-smile" style="padding-left:5px"></i><br>
+						</a>
+						</div>
+						
+					</div>
+				</div>
+
+
+    <div id="div12-right" class="border1">
+					<div class="border2">
+						<div class="slide-outter swiper-container">
+							<div class="slide-inner swiper-wrapper">
+								<div class="swiper-slide"><img id="img1" src="https://www.sushiexpress.com.tw/images/HomeAdCycle_dinshi/25.jpg?" alt="雪花1.jpg"></div>
+								<div class="swiper-slide"><img id="img2" src="https://www.sushiexpress.com.tw/images/HomeAdCycle_dinshi/22.jpg?" alt="雪花2.jpg"></div>
+								<div class="swiper-slide"><img id="img3" src="https://www.sushiexpress.com.tw/images/HomeAdCycle_dinshi/24.jpg?" alt="雪花3.jpg"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>	
+					</div>
+				</div>	
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>				
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.esm.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.esm.bundle.js"></script>
+<script src="path/to/swiper.min.js"></script>
+
+
+
+    <script>
+    var swiper = new Swiper('#div12-right .swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 1200,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    
+var slideInner=document.querySelector(".swiper-wrapper");
+slideInner.addEventListener("mouseover", function(){
+	swiper.autoplay.stop();
+})
+slideInner.addEventListener("mouseout", function(){
+	swiper.autoplay.start();
+})
+
+  </script>
+  </body>
+</html>
